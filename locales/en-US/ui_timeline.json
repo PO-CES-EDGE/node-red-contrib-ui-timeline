@@ -1,0 +1,29 @@
+{
+    "timeline" : {
+        "label" : {
+            "group" : "Group",
+            "size" : "Size",
+            "send" : "Send data on click ",
+            "configuration": "Configuration",
+            "show-text": "Display label",
+            "text-padding": "Text padding",
+            "responsive": "Enable responsive",
+            "y-axes": "Y-axes grid",
+            "background-color-repeat": "Repeat two colors",
+            "background-color": "Background colors",
+            "element-color": "Elements/Steps colors",
+            "element-color-palette-1": "Palette 1",
+            "element-color-palette-2": "Palette 2",
+            "title": "Title"
+        },
+        "info": {
+
+            "chart-ok": "Chart- timeline successfully  created"
+        },
+        "error": {
+            "no-group": "group not configured",
+            "no-canvas": "canvas tag does not exist",
+            "no-creation": "node creation error"
+        }
+    }
+}

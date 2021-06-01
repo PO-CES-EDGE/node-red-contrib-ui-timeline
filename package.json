@@ -1,0 +1,26 @@
+{
+  "name": "node-red-contrib-dashboard-timeline",
+  "version": "0.0.1",
+  "description": "Timeline UI widget node for Node-RED Dashboard",
+  "author": "Plastic omnium - Edge Project team",
+  "contributors": [
+    "henry.haba_ext@plasticomnium.com"
+  ],
+  "license": "Apache-2.0",
+  "node-red": {
+    "nodes": {
+      "ui_timeline": "ui_timeline.js"
+    }
+  },
+  "peerDependencies": {
+    "node-red-dashboard": ">2.16.0"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1"
+  },
+  "keywords": [
+    "node-red",
+    "node-red-dashboard",
+    "timeline"
+  ]
+}
