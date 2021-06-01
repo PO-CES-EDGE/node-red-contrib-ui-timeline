@@ -1,0 +1,129 @@
+<script type="text/html" data-help-name="ui_timeline">
+    <p>A Node-RED-Dashboard UI widget node that displays timeline. Google-like timeline chart based on Chart.js.</p>
+
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload<span class="property-type">array</span></dt>
+        <dd>An array of array which contains timeline data:</dd>
+        <ul><li>label</li><li>start date timestamp</li><li>end date timestamp</li></ul>
+        <h3>Example data</h3>
+        <pre>
+            <code lang="JSON">
+ [
+  [
+    "Start Extruders",
+    1619861576130,
+    1619866976130
+  ],
+  [
+    "Raise to starting speeds",
+    1619866976130,
+    1619868476130
+  ],
+  [
+    "Raise to starting speeds",
+    1619868476130,
+    1619870276130
+  ],
+
+  [
+    "Stop",
+    1619900816130,
+    1619902076130
+  ]
+]
+
+            </code>
+        </pre>
+        <h3>Validation</h3>
+        <p>Input data into message payload must be an array of array of 3 items <code>[[String, date timestamp, date timestamp], ....]</code>.</p>
+        <p>Example of javascript validation with
+            <code>
+                const dataSchema =  Joi.array().items(stepSchema).required();
+                const stepSchema = Joi.array().length(3).items(Joi.string().required(), Joi.date().timestamp().required(), Joi.date().timestamp().required());
+            </code>
+        </p>
+        <p></p>
+    </dl>
+
+    <h3>Outputs (No output)</h3>
+    <dl class="message-properties">
+        <dt>payload<span class="property-type">Null</span></dt>
+        <dd>No output.</dd>
+
+    </dl>
+
+    <h3>Details</h3>
+    <p>To clear the timeline send an empty data array <code>[]</code>.</p>
+    <p></p>
+    <h3>Advanced features</h3>
+    <h4>Configuration</h4>
+    <p>The configuration is used to change how the timeline behaves. There are properties to control styling, fonts, the legend, etc</p>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span>Display label: </span></div>
+            <div  style="background: rgb(241, 250, 238);"><span>Display label of each element</span></div>
+        </div>
+
+    </div>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span> Enable responsive: </span></div>
+            <div  style="background: rgb(241, 250, 238);"><span>Enable responsive design: Resizes the chart canvas when its container does.</span></div>
+        </div>
+    </div>
+
+    </div>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span>Text padding: </span></div>
+            <div style="background: rgb(241, 250, 238);"><span>Label padding space</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span> Enable responsive: </span></div>
+            <div style="background: rgb(241, 250, 238);"><span>Enable responsive design: Resizes the chart canvas when its container does.</span>
+            </div>
+        </div>
+    </div>
+    <h5>Y-axis configuration</h5>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span>Background colors: </span></div>
+            <div style="background: rgb(241, 250, 238);"><span>Choose two colors for y-axis grid background color</span>
+            </div>
+        </div>
+    </div>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span>Repeat two colors: </span></div>
+            <div style="background: rgb(241, 250, 238);"><span>Repeat two background colors on y-axis grid.</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    <h5>Elements or steps background color configuration</h5>
+
+    </div>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span> Palette 1: </span></div>
+            <div style="background: rgb(241, 250, 238);"><span>Choose palette 1 colors</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="display: block; margin-left: 200px;">
+        <div style="display:flex">
+            <div style="width:30%"><span> Palette 2: </span></div>
+            <div style="background: rgb(241, 250, 238);"><span>Choose palette 2 colors</span>
+            </div>
+        </div>
+    </div>
+
+</script>
