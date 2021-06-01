@@ -7,10 +7,11 @@ A Node-RED-Dashboard UI widget node that displays timeline. Google-like timeline
 Either use the Editor - Menu - Manage Palette - Install option, or run the following command in your Node-RED user directory (typically `~/.node-red`) after installing Node-RED-dashboard.
 
         npm i node-red-contrib-ui-timeline
+        npm i https://github.com/PO-CES-EDGE/node-red-contrib-ui-timeline
 
 ## Usage
 
-![](.\screenshot.png)
+![](./screenshot.png)
 
 This timeline node expects `msg.payload` to contain an array of array of  timeline data, one object per row.
 Each data row object should have the same set of values:
@@ -72,7 +73,7 @@ Example of JavaScript validation with:
 
 ### Configuration
 
-![](.\config_dialog_box.PNG)
+![](./config_dialog_box.PNG)
 
 The configuration is used to change how the timeline behaves. There are properties to control styling, fonts, the legend, etc.
 
