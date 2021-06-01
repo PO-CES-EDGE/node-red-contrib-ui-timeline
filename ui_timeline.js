@@ -43,7 +43,7 @@ module.exports = function (RED) {
                 <script type='text/javascript' src='ui-timeline/js/timeline.js'></script>
                 <script type='text/javascript' src='ui-timeline/js/chartjs-plugin-gridline-background.js'></script>
 
-                <div id="timeline-section" style="height:100%">
+                <div id="timeline-section" style="position: relative; height:50vh; width:100%">
                     <canvas id="timeline-canvas-{{$id}}"></canvas>
                 </div>
                 <input type='hidden' ng-init='init(` + configAsJson + `)'>
@@ -154,6 +154,7 @@ module.exports = function (RED) {
                                                 textPadding: config.textPadding,
                                             },
                                             responsive: config.responsive,
+                                            maintainAspectRatio: true,
                                             scales: {
                                                 // xAxes: [{gridLines: { color: "#131c2b" }}],
                                                 // yAxes: [{gridLines: { color: "#131c2b" }, }],
@@ -211,9 +212,9 @@ module.exports = function (RED) {
                                 $scope.timeline.data.labels = buildLabelTab(datas);
                                 $scope.timeline.data.datasets = buildDataSets(datas);
                                 $scope.timeline.update();
-
-
-                            }
+                                $scope.timeline.canvas.parentNode.style.height = $scope.timeline.data.labels.length*100+'px';
+                                $scope.timeline.canvas.style.height = $scope.timeline.data.labels.length*100+'px';
+                           }
                         });
 
                     },

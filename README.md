@@ -11,6 +11,8 @@ Either use the Editor - Menu - Manage Palette - Install option, or run the follo
 
 ## Usage
 
+![](./screenshot2.png)
+
 ![](./screenshot.png)
 
 This timeline node expects `msg.payload` to contain an array of array of  timeline data, one object per row.
@@ -65,7 +67,7 @@ Each data row object should have the same set of values:
 ### Validation
 
 Input data into message payload must be an array of array of 3 items <code>[[String, date timestamp, date timestamp], ....]
-Example of JavaScript validation with:
+Example of JavaScript validation with [Joi](https://www.npmjs.com/package/joi):
 
     const dataSchema =  Joi.array().items(stepSchema).required();
     const stepSchema = Joi.array().length(3).items(Joi.string().required(), Joi.date().timestamp().required(), Joi.date().timestamp().required());
@@ -82,10 +84,10 @@ The configuration is used to change how the timeline behaves. There are properti
 | Display label                                        | Display label of each element                                |
 | Enable responsive                                    | Enable responsive design: Resizes the chart canvas when its container does. |
 | Text padding                                         | Label padding space                                          |
-| **Y-axis configuration**                             |                                                              |
+| **Y-axis configuration**                                                                                            |
 | Background colors                                    | Choose two colors for y-axis grid background color           |
 | Repeat two colors                                    | Repeat two background colors on y-axis grid.                 |
-| **Elements or steps background color configuration** |                                                              |
+| **Elements or steps background color configuration**                                                                |
 | Palette 1                                            | Choose palette 1 colors                                      |
 | Palette 2                                            | Choose palette 2 colors                                      |
 
