@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-ui-timeline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Timeline UI widget node for Node-RED Dashboard",
   "author": "Plastic omnium - Edge Project team",
   "contributors": [
